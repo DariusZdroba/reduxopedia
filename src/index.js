@@ -6,11 +6,13 @@ import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import DestinationList from "./app/components/DestinationList";
 import DestinationFact from "./app/components/DestinationFact";
+import ResestApp from "./app/components/ResestApp";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Header />
+      <ResestApp />
       <div className="mt-4 p-4 text-center border d-flex">
         <Counter />
       </div>

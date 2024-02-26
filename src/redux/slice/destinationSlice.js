@@ -29,7 +29,10 @@ export const destinationSlice = createSlice({
     destinationClicked: (state, action) => {
       state.destinationSelected = action.payload;
     },
+    resetDestination: (state) => {
+      state.destinationSelected = null;
+    },
   },
 });
-export const { destinationClicked } = destinationSlice.actions;
+export const { destinationClicked, resetDestination } = destinationSlice.actions;
 export const destinationReducer = destinationSlice.reducer;
