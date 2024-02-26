@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import { resetDestination } from "./destinationSlice";
+import { resetReduxopedia } from "../action/actions";
 const initialState = { count: 10 };
 
 export const counterSlice = createSlice({
@@ -19,17 +20,17 @@ export const counterSlice = createSlice({
     decrementMultiply: (state, action) => {
       state.count /= action.payload;
     },
-    resetCounter: (state) => {
+    /*     resetCounter: (state) => {
       state.count = 10;
-    },
+    }, */
+  },
+  extraReducers: (builder) => {
+    builder.addCase(resetReduxopedia, (state, action) => {
+      state.count = 10;
+    });
   },
 });
 
-export const {
-  increment,
-  decrement,
-  multiplyCount,
-  decrementMultiply,
-  resetCounter,
-} = counterSlice.actions;
+export const { increment, decrement, multiplyCount, decrementMultiply } =
+  counterSlice.actions;
 export const counterReducer = counterSlice.reducer;

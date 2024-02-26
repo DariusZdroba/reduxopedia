@@ -1,12 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { resetCounter } from "../../redux/slice/counterSlice";
-import { resetDestination } from "../../redux/slice/destinationSlice";
+import { resetReduxopedia } from "../../redux/action/actions";
 const ResestApp = () => {
   const dispatch = useDispatch();
   const resetCounterAndDestination = () => {
-    dispatch(resetCounter());
-    dispatch(resetDestination());
+    dispatch(resetReduxopedia());
   };
   return (
     <div className="text-center pt-3">
